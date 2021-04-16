@@ -45,9 +45,12 @@ getCommentApi()
         retro.getComments().enqueue(object : Callback<List<Comment>>{
             override fun onResponse(call: Call<List<Comment>>, response: Response<List<Comment>>) {
           val comment = response.body()
-              for (c in comment !!){
+              for (c in comment!!){
                   Log.e("result", c.email.toString())
               }
+                for (c in comment!!){
+                    Log.e("name", c.name.toString())
+                }
             }
 
             override fun onFailure(call: Call<List<Comment>>, t: Throwable) {
